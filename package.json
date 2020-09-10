@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "Portfolio site. Created during the programming webinars by Skillfactory",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Julia Tokarevskaya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
