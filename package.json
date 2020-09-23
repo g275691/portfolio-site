@@ -4,6 +4,7 @@
   "description": "Portfolio site. Created during the programming webinars by Skillfactory",
   "main": "app.js",
   "scripts": {
+    "dev": "node app.js",
     "test": "test"
   },
   "author": "Julia Tokarevskaya",
