@@ -66,6 +66,7 @@
 .icon-instagram:before{content:'\0043';}
 .icon-behance:before{content:'\0044';}
 .icon-dribbble:before{content:'\0045';}
+.icon-close:before{content:'\0046';}
 
 
 /* variables */
@@ -74,7 +75,6 @@ $black: #070707;
 $grey: #828282;
 $lightgrey: #F6F6F6;
 $stargrey: #E5E5E5;
-
 /* mixins */
 
 @mixin breakpoint($point) {
@@ -486,6 +486,10 @@ template {
 section {
   padding: 120px 0;
 
+  @include breakpoint(medium) {
+    padding: 60px 0;
+  }
+
   &.is-grey {
     background: $lightgrey;
   }
@@ -516,6 +520,7 @@ section {
     text-decoration: none;
     color: $grey;
     font-weight: bold;
+    cursor: pointer;
 
     &.is-active, &:hover {
       color: $black;
@@ -527,6 +532,10 @@ section {
 
 .header__frame {
   padding-top: 0;
+
+  @include breakpoint(medium) {
+    padding: 30px;
+  }
 
   &-wrapper {
     display: flex;
@@ -546,6 +555,12 @@ section {
     }
   }
 
+  &-title {
+    @include breakpoint(medium) {
+      margin-top: 15px;
+    }
+  }
+
   &-lang {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
@@ -554,7 +569,15 @@ section {
     a {
       color: $grey;
       text-decoration: none;
+
+      &:hover {
+        color: $black;
+      }
     }
+  }
+
+  img.is-mobile {
+    width: 100%;
   }
 }
 
@@ -648,6 +671,7 @@ section {
     padding: 13px 28px;
     border-radius: 30px;
     margin: 30px 0 85px 0;
+    cursor: pointer;
   }
 
   &-socials {
@@ -669,5 +693,158 @@ section {
     font-size: 14px;
     line-height: 17px;
     margin-top: 45px;
+  }
+}
+
+/* mobile menu */
+
+.menu__mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 10;
+  padding: 60px 30px;
+  opacity: 0;
+  pointer-events: none;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &-wrapper {
+    padding-right: 60px;
+  }
+
+  &-link {
+    display: block;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 42px;
+    color: $grey;
+    text-decoration: none;
+    margin-bottom: 60px;
+
+    &.is-active {
+      color: $black;
+    }
+  }
+
+  &-close {
+    color: $grey;
+    font-size: 23px;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  &-lang {
+    writing-mode: vertical-rl;
+    font-weight: bold;
+    position: absolute;
+    right: 30px;
+    bottom: 60px;
+    font-size: 34px;
+    line-height: 42px;
+
+    a {
+      color: $grey;
+      text-decoration: none;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}
+
+.mobile__burger {
+  position: absolute;
+  top: 95px;
+  right: 30px;
+  cursor: pointer;
+
+  &-item {
+    background: $black;
+    width: 33px;
+    height: 4px;
+
+    + div {
+      margin-top: 4px;
+    }
+  }
+}
+
+/* modal form */
+
+.modal__form {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: all;
+
+    .modal__form-wrapper {
+      transform: translateX(0);
+      transition-delay: 400ms;
+    }
+  }
+
+  &-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    transform: translateX(100%);
+  }
+
+  &-send {
+    cursor: pointer;
+  }
+
+  &-close {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    font-size: 30px;
+    color: $grey;
+    cursor: pointer;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  form {
+    width: 100%;
+    margin: 0 auto;
+
+    input, textarea {
+      width: 100%;
+      margin: 7px 0;
+      padding: 5px 10px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
   }
 }

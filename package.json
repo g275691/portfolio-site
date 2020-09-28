@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "dev": "node app.js",
-    "test": "test"
+    "test": "test",
+    "compile-sass": "sass src/scss/style.scss src/css/style.css",
+    "watch-sass": "sass --watch src/scss/style.scss:src/css/style.css"
   },
   "author": "Julia Tokarevskaya",
   "license": "ISC",

@@ -8,26 +8,42 @@
 <body>
 	<header class="content__container">
 		<nav class="menu__frame is-desktop">
-			<a class="menu__frame-link is-animated is-active" href="">Home</a>
-			<a class="menu__frame-link is-animated" href="">About me</a>
-			<a class="menu__frame-link is-animated" href="">Skills</a>
-			<a class="menu__frame-link is-animated" href="">Portfolio</a>
-			<a class="menu__frame-link is-animated" href="">Contacts</a>
+			<div class="menu__frame-link is-animated is-active" data-target="main">Home</div>
+			<div class="menu__frame-link is-animated" data-target="about">About me</div>
+			<div class="menu__frame-link is-animated" data-target="skills">Skills</div>
+			<div class="menu__frame-link is-animated" data-target="portfolio">Portfolio</div>
+			<div class="menu__frame-link is-animated" data-target="contacts">Contacts</div>
 		</nav>
 	</header>
 	<main>
-		<section class="header__frame">
+		<section class="header__frame" id="section-main">
 			<div class="content__container">
 				<div class="header__frame-wrapper">
 					<h1 class="header__frame-h1">Denis <br/>Novik</h1>
 					<div class="header__frame-title">UX | UI designer <br/>24 years old, Minsk</div>
-					<div class="header__frame-lang is-desktop"><a href="">RU</a> | ENG</div>
+					<div class="header__frame-lang is-desktop"><a class="is-animated" href="">RU</a> | ENG</div>
 				</div>
 				<img src="src/img/header.jpg" alt="Denis Novik UX | UI designer" class="is-desktop" />
 				<img src="src/img/header-xs.jpg" alt="Denis Novik UX | UI designer" class="is-mobile" />
+				<div class="mobile__burger is-mobile">
+					<div class="mobile__burger-item"></div>
+					<div class="mobile__burger-item"></div>
+					<div class="mobile__burger-item"></div>
+				</div>
+			</div>
+			<div class="menu__mobile is-mobile is-animated">
+				<nav class="menu__mobile-wrapper">
+					<a class="menu__mobile-link is-active" href="">Home</a>
+					<a class="menu__mobile-link" href="">About me</a>
+					<a class="menu__mobile-link" href="">Skills</a>
+					<a class="menu__mobile-link" href="">Portfolio</a>
+					<a class="menu__mobile-link" href="">Contacts</a>
+				</nav>
+				<div class="menu__mobile-close icon-close"></div>
+				<div class="menu__mobile-lang"><a href="">RU</a> | ENG</div>
 			</div>
 		</section>
-		<section class="about__frame is-grey">
+		<section class="about__frame is-grey" id="section-about">
 			<div class="content__container is-align-center">
 				<h2>About me</h2>
 				<div class="about__frame-text">
@@ -37,7 +53,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="skills__frame">
+		<section class="skills__frame" id="section-skills">
 			<div class="content__container is-align-center">
 				<h2>Skills</h2>
 				<p class="skills__frame-desc">I work in such programs as</p>
@@ -89,7 +105,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="portfolio__frame is-grey">
+		<section class="portfolio__frame is-grey" id="section-portfolio">
 			<div class="content__container is-align-center">
 				<h2>Portfolio</h2>
 				<div class="portfolio__frame-item">
@@ -107,7 +123,7 @@
 			</div>
 		</section>
 	</main>
-	<footer class="footer__frame">
+	<footer class="footer__frame" id="section-contacts">
 		<div class="content__container is-align-center">
 			<h2>Contacts</h2>
 			<p>Want to know more or just chat? <br/>You are welcome!</p>
@@ -121,5 +137,18 @@
 			<div class="footer__frame-copy">Like me on <br/>LinkedIn, Instagram, Behance, Dribble</div>
 		</div>
 	</footer>
+	<div class="modal__form is-animated">
+		<div class="modal__form-wrapper is-animated">
+			<form action="#">
+				<input type="text" placeholder="Ваше имя *" required />
+				<input type="email" placeholder="E-mail"  />
+				<input type="tel" pattern="+7 [0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Телефон *" required />
+				<textarea required></textarea>
+				<input class="modal__form-send" type="submit" value="Send" />
+			</form>
+			<div class="modal__form-close icon-close is-animated"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="src/js/script.js"></script>
 </body>
 </html>
