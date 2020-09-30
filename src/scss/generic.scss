@@ -1,0 +1,45 @@
+/* generic */
+
+.is-animated {
+  transition: all 400ms ease;
+}
+
+.content__container {
+  margin: 0 auto;
+
+  &.is-align-center {
+    text-align: center;
+  }
+
+  @include breakpoint(large) {
+    width: 944px;
+  }
+
+  @include breakpoint(medium) {
+    width: 100%;
+  }
+}
+
+section {
+  padding: 120px 0;
+
+  @include breakpoint(medium) {
+    padding: 60px 0;
+  }
+
+  &.is-grey {
+    background: $lightgrey;
+  }
+}
+
+.is-desktop {
+  @include breakpoint(medium) {
+    display: none!important;
+  }
+}
+
+.is-mobile {
+  @include breakpoint(large) {
+    display: none!important;
+  }
+}
